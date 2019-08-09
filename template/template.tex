@@ -1,0 +1,95 @@
+%===============================================================================
+%> \file template.tex
+%% \brief
+%% \b File template in Python: LaTeX example
+%% \author
+%% Marc Joos <marc.joos@gmail.com>
+%% \copyright
+%% Copyrights 2019, Marc Joos
+%% This file is distributed under the CeCILL-A & GNU/GPL licenses, see
+%% <http://www.cecill.info/licences/Licence_CeCILL_V2.1-en.html> and
+%% <http://www.gnu.org/licenses/>
+%<
+%===============================================================================
+\documentclass[a4paper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{multirow}
+\IfFileExists{libertine.sty}{
+\usepackage{libertine}
+}{\typeout{> Libertine not available! Use Times instead.}
+\usepackage[varg]{txfonts}}
+
+%% Change section, subsection etc. layout
+\makeatletter
+\renewcommand{\section}{\@startsection {section}{1}{\z@}%%
+             {-3.5ex \@plus -1ex \@minus -.2ex}%%
+             {2.3ex \@plus .2ex}%%
+             {\normalfont\Large\sffamily\bfseries}}
+
+\renewcommand{\subsection}{\@startsection{subsection}{2}{\z@}%%
+             {-3.25ex\@plus -1ex \@minus -.2ex}%%
+             {1.5ex \@plus .2ex}%%
+             {\normalfont\large\sffamily\bfseries}}
+
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{2}{\z@}%%
+             {-3.25ex\@plus -1ex \@minus -.2ex}%%
+             {1.5ex \@plus .2ex}%%
+             {\normalfont\normalsize\sffamily\bfseries}}
+\makeatother
+
+\newcommand{\sigz}{\ensuremath{\sigma_0}}
+
+\begin{document}
+\thispagestyle{empty}
+
+~
+\vspace{10em}
+\begin{center}
+  {\huge A very import report}
+ 
+  \vspace*{3em}
+ 
+  {\Large from %(date1)s to %(date2)s}
+\end{center}
+
+\begin{flushright}
+  Version: %(version)s
+\end{flushright}
+\clearpage
+
+\setcounter{page}{0}
+
+\section*{Test}
+
+\subsection*{%(subsection1)s}
+
+\begin{itemize}
+\item test 1
+\item %(item2)s
+\item test 3
+\end{itemize}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.5\textwidth]{%(fig1)s}
+  \caption{This is a figure}
+\end{figure}
+
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{c|c}
+    \hline
+    1 & %(elt2)s \\
+    \hline
+  \end{tabular}
+  \caption{This is a table}
+\end{table}
+
+\end{document}
