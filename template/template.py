@@ -27,7 +27,7 @@ template = open(report, 'rt').read()
 data = {"subsection1": "My awesome first subsection",
         "item2": "an awesome item",
         "fig1": "/path/with/image.png",
-        "elt2": "3",
+        "elt2": 3,
         "date1": "17-12-2018",
         "date2": "18-12-2018",
         "version": "1.0"}
